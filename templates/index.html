@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact App</title>
+</head>
+<body>
+
+
+
+
+    <h1>Enter your contact details</h1>
+
+    <div id="app">
+
+      <form v-on:submit="newPost" v-on:submit.prevent>
+        <label for="title">phone Number</label><br>
+        <input type="text" name="title" v-model="post.title"> 
+
+        <br>
+        
+        <label for="body">Email</label><br>
+        <input type="text" name="body" v-model="post.body"><br>
+
+        <button type="submit">Post</button>
+      </form>
+
+      <div v-for="post in posts">
+          <h2>phone number : {{ post.title }}</h2>
+
+          <p>Email :{{ post.body }}</p>
+      </div>
+
+    </div>
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/public/js/app.js"></script>
+</body>
+</html>
